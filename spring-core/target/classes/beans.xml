@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+	
+	<bean name="animal" class="com.revature.beans.Animal">
+		<property name="id" value="0"></property>
+		<property name="name" value="Default"></property>
+		<property name="legs" value="4"></property>
+		<property name="age" value="18"></property>
+	</bean>
+		
+	<bean name="Hippo" class="com.revature.beans.Animal">
+		<property name="id" value="1"></property>
+		<property name="name" value="Hippo"></property>
+		<property name="legs" value="6"></property>
+		<property name="age" value="38"></property>
+	</bean>
+	
+	<bean name="Employee" class="com.revature.beans.Employee">
+	</bean>
+	
+	<bean name="Bob" class="com.revature.beans.Employee">
+		<property name="name" value="Bob"></property>
+		<property name="animal" ref="Hippo"></property>
+	</bean>
+	
+	<bean name="Sam" class="com.revature.beans.Animal">
+		<constructor-arg index = "0" value="Sam"></constructor-arg>
+		<constructor-arg index = "1" value="17"></constructor-arg>
+		<constructor-arg index = "2" value="200"></constructor-arg>
+		<constructor-arg index = "3" value="200"></constructor-arg>
+	</bean>
+
+	<context:component-scan base-package="com.revature.beans"></context:component-scan>
+</beans>
